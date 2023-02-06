@@ -1,0 +1,20 @@
+---
+vars_prompt:
+    - name: port_channel
+      prompt: Please provide the number of the port-channel #Ex: 1
+      private: no
+    - name: workstation_name
+      prompt: Please provide the workstation_name #Ex: BR-RTC-01
+      private: no
+    - name: access_vlan
+      prompt: Please provide the access_vlan #Ex: 2142
+      private: no
+    - name: mac_address
+      prompt: Please provide the mac_address #Ex: C8D9.D213.3B77
+      private: no
+    - name: interface_ethernet
+      prompt: Please provide the number of interface_ethernet #Ex: 1/1
+      private: no 
+    - name: channel_group
+      prompt: Please provide the number of channel_group #Ex: 1 (same as port-channel number)
+      private: no     

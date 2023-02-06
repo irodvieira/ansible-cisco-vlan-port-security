@@ -1,0 +1,23 @@
+---
+# tasks file for port security
+- name: Create interface Portchannel 
+  ios_command:
+    commands:
+        - conf t
+        - interface port-channel{{ port_channel }}
+        - description To {{ workstation_name }}
+        - switchport access vlan {{ access_vlan }}
+        - spanning-tree port type normal
+        - switchport port-security
+        - switchport port-security mac-address {{ mac_address }}
+        - vpc 1
+            
+- name: Create interface Ethernet
+  ios_command:
+    commands: 
+        - conf t
+        - interface Ethernet{{ interface_ethernet }}
+        - description {{ workstation_name }}
+        - switchport access vlan {{ access_vlan }}
+        - channel-group (( channel_group )) mode active
+...
